@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@+id/nav_trilhas">
+
+    <fragment
+            android:id="@+id/nav_trilhas"
+            android:name="com.senai.first_road.views.ListaTrilhasFragment"
+            android:label="@string/menu_trilha"
+            tools:layout="@layout/fragment_lista_trilhas">
+        <action android:id="@+id/action_nav_trilhas_to_nav_editar_imagem2" app:destination="@id/nav_editar_imagem"/>
+        <action android:id="@+id/action_nav_trilhas_to_nav_suporte" app:destination="@id/nav_suporte"/>
+    </fragment>
+
+    <action android:id="@+id/action_nav_trilhas_to_nav_editar_imagem" app:destination="@id/nav_editar_imagem"/>
+
+    <action
+            android:id="@+id/action_nav_trilhas_to_nav_sair"
+            app:destination="@+id/nav_sair"
+    />
+    <action android:id="@+id/action_nav_trilhas_to_telaSuporteFragment" app:destination="@id/nav_suporte"/>
+
+
+
+    <fragment
+            android:id="@+id/nav_editar_imagem"
+            android:name="com.senai.first_road.views.EditarImagemFragment"
+            android:label="@string/menu_editar_imagem"
+            tools:layout="@layout/fragment_editar_imagem">
+        <action android:id="@+id/action_nav_editar_imagem_to_nav_suporte" app:destination="@id/nav_suporte"/>
+
+    </fragment>
+
+    <action android:id="@+id/action_nav_editar_imagem_to_nav_trilhas" app:destination="@id/nav_trilhas"/>
+
+    <action
+            android:id="@+id/action_nav_editar_imagem_to_nav_sair"
+            app:destination="@+id/nav_sair"
+    />
+    <action android:id="@+id/action_nav_editar_imagem_to_telaSuporteFragment"
+            app:destination="@id/nav_suporte"/>
+
+
+
+    <fragment android:id="@+id/nav_suporte"
+                     android:name="com.senai.first_road.views.TelaSuporteFragment"
+                     android:label="fragment_tela_suporte"
+                     tools:layout="@layout/fragment_tela_suporte">
+
+        <action android:id="@+id/action_telaSuporteFragment_to_nav_trilhas" app:destination="@id/nav_trilhas"/>
+        <action android:id="@+id/action_telaSuporteFragment_to_nav_editar_imagem" app:destination="@id/nav_editar_imagem"
+        />
+        <action android:id="@+id/action_nav_suporte_to_nav_trilhas" app:destination="@id/nav_trilhas"/>
+    </fragment>
+</navigation>
